@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Прикладное ПО 1</title>
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">Домашняя страница</a></h1>
+    </div>
+    <div>
+      <h1><a href="">Список авторов</a></h1>
+    </div>
+    <div>
+      <h2>Здравствуй, Пользователь!</h2>
+    </div>
+    <div>
+      <a  href="/author/new">дабовить авторов</a>
+    </div>
+    <div class="">
+      {% for author in authors %}
+      <div>
+        <h1><a href="">{{ author.first_name }}</a></h1>
+        <h4>{{ author.last_name }}</h4>
+
+        {% if author.date_of_birth != null %}
+          <p>{{ author.date_of_birth }}</p>
+        {% else %}
+          <p>Дата не указана</p>
+        {% endif %}
+
+        {% if author.date_of_death != null %}
+          <p>{{ author.date_of_death }}</p>
+        {% else %}
+          <p>Еще жив или дата не указана</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

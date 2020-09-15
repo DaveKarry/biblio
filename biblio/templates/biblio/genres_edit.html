@@ -1,0 +1,12 @@
+<html>
+ <head>
+ <title>Редактируем записи в genre</title>
+ </head>
+ <body>
+ <h1>Новая запись в таблицу genre</h1>
+    <form method="POST" class="genre-form">
+        {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Save</button>
+ </form>
+ </body>
+</html>

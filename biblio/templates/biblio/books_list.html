@@ -1,0 +1,41 @@
+
+<html>
+{% load static %}
+
+  <head>
+    <title>Прикладное ПО 1</title>
+    <link rel="stylesheet" href="{% static 'css/biblio.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="topnav">
+          <div class="navigation">
+            <a href="/">Домашняя страница</a>
+            <a href="book/new">Создать новую запись книги</a>
+            <a href="author/list">Список авторов</a>
+            <a href="genre/list">Список жанров</a>
+          </div>
+          <div class="greetings">
+            <h2>Здравствуй, Пользователь!</h2>
+          </div>
+    </div>
+
+    <div class="books">
+      {% for book in books %}
+
+        <div class="card">
+          <div class="image">
+            <img src="{% static 'images/BOOK.png' %}" alt="Avatar" style=" margin: 7.5px;">
+          </div>
+
+          <div class="container">
+            <h4><a href="">{{ book.title }}</a></h4>
+            <p>{{ book.author }}</p>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+
+  </body>
+</html>
