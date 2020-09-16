@@ -19,13 +19,13 @@
             <h2>Здравствуй, Пользователь!</h2>
           </div>
     </div>
-
+    {% if books is not empty %}
     <div class="books">
+
       {% for book in books %}
 
         <div class="card">
           <div class="image">
-            <img src="{% static 'images/BOOK.png' %}" alt="Avatar" style=" margin: 7.5px;">
           </div>
 
           <div class="container">
@@ -36,6 +36,7 @@
 
       {% endfor %}
     </div>
+    {% endif %}
 
   </body>
 </html>
