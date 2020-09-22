@@ -1,23 +1,34 @@
 <html>
+{% load static %}
+
   <head>
     <title>Прикладное ПО 1</title>
+    <link rel="stylesheet" href="{% static 'css/biblio.css' %}">
+
   </head>
   <body>
-    <div>
-      <h1><a href="/">Домашняя страница</a></h1>
+    <div class="topnav">
+          <div class="navigation">
+            <a href="/">Домашняя страница</a>
+            <a href="/genre/new" style=" background-color: #febcff; color: black;">Создать новую запись жанра</a>
+            <a href="/author/list">Список авторов</a>
+            <a href="/genre/list">Список жанров</a>
+            <a href="/">Список книг</a>
+
+          </div>
+          <div class="greetings">
+            <h2>Здравствуй, Пользователь!</h2>
+          </div>
     </div>
-    <div>
-      <h2>Здравствуй, Пользователь!</h2>
-    </div>
-    <div>
-      <a  href="/genre/new">Создать новую запись жанра</a>
-    </div>
-    <div class="">
-      {% for genre in genres %}
-      <div>
-        <h1><a href="">{{ genre.name }}</a></h1>
+    <div class="body">
+      <div class="">
+        {% for genre in genres %}
+        <div>
+          <h1><a href="">{{ genre.name }}</a></h1>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
+
   </body>
 </html>

@@ -1,12 +1,29 @@
 <html>
+{% load static %}
  <head>
  <title>Редактируем записи в books</title>
+ <link rel="stylesheet" href="{% static 'css/biblio.css' %}">
  </head>
  <body>
+   <div class="topnav">
+         <div class="navigation">
+           <a href="/">Домашняя страница</a>
+           <a href="/book/new" style=" background-color: #febcff; color: black;" >Создать новую запись книги</a>
+           <a href="/author/list">Список авторов</a>
+           <a href="/genre/list">Список жанров</a>
+           <a href="/">Список книг</a>
+
+         </div>
+         <div class="greetings">
+           <h2>Здравствуй, Пользователь!</h2>
+         </div>
+   </div>
+ <div class="body">
  <h1>Новая запись в таблицу books</h1>
     <form method="POST" class="book-form">
         {% csrf_token %} {{ form.as_p }}
     <button type="submit">Save</button>
  </form>
+</div>
  </body>
 </html>
